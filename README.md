@@ -1,3 +1,3 @@
 # calculator
 
-An IOS calculator demo 
+An IOS calculator demo.
