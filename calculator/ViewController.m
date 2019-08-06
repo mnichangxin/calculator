@@ -10,18 +10,18 @@
     }
     return self;
 }
-- (IBAction)showQuestion:(id)sender {
-    self.currentQuestionIndex++;
-    if (_currentQuestionIndex == [self.questions count]) {
-        self.currentQuestionIndex = 0;
-    }
-    NSString *question = [self.questions objectAtIndex:self.currentQuestionIndex];
-    self.questionLabel.text = question;
-    self.answerLabel.text = @"???";
-}
-- (IBAction)showAnswer:(id)sender {
-    NSString *answer = [self.answers objectAtIndex:self.currentQuestionIndex];
-    self.answerLabel.text = answer;
-}
+//- (IBAction)showQuestion:(id)sender {
+//    self.currentQuestionIndex++;
+//    if (_currentQuestionIndex == [self.questions count]) {
+//        self.currentQuestionIndex = 0;
+//    }
+//    NSString *question = [self.questions objectAtIndex:self.currentQuestionIndex];
+//    self.questionLabel.text = question;
+//    self.answerLabel.text = @"???";
+//}
+//- (IBAction)showAnswer:(id)sender {
+//    NSString *answer = [self.answers objectAtIndex:self.currentQuestionIndex];
+//    self.answerLabel.text = answer;
+//}
 
 @end

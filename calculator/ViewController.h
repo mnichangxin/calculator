@@ -11,7 +11,7 @@
 @property (nonatomic, weak) IBOutlet UIButton *showQuestionButton;
 @property (nonatomic, weak) IBOutlet UIButton *showAnswerButton;
 
-- (IBAction)showQuestion:(id)sender;
-- (IBAction)showAnswer:(id)sender;
+//- (IBAction)showQuestion:(id)sender;
+//- (IBAction)showAnswer:(id)sender;
 
 @end
