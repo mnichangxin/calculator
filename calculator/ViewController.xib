@@ -21,11 +21,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="W1f-RI-bbq">
-                    <rect key="frame" x="0.0" y="44" width="414" height="218"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="163.5"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GVq-1A-5VZ">
-                    <rect key="frame" x="0.0" y="656" width="414" height="153"/>
+                    <rect key="frame" x="0.0" y="207.5" width="414" height="654.5"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
             </subviews>
@@ -33,12 +33,12 @@
             <constraints>
                 <constraint firstItem="LjK-Xc-wau" firstAttribute="trailing" secondItem="GVq-1A-5VZ" secondAttribute="trailing" id="0uK-3C-yk5"/>
                 <constraint firstItem="GVq-1A-5VZ" firstAttribute="leading" secondItem="LjK-Xc-wau" secondAttribute="leading" id="3f0-9N-tfk"/>
+                <constraint firstItem="W1f-RI-bbq" firstAttribute="top" secondItem="LjK-Xc-wau" secondAttribute="top" id="5qZ-Wj-e2g"/>
                 <constraint firstItem="W1f-RI-bbq" firstAttribute="leading" secondItem="LjK-Xc-wau" secondAttribute="leading" id="8gw-kF-btT"/>
+                <constraint firstItem="GVq-1A-5VZ" firstAttribute="top" secondItem="W1f-RI-bbq" secondAttribute="bottom" id="BDj-EU-W6H"/>
                 <constraint firstItem="LjK-Xc-wau" firstAttribute="trailing" secondItem="W1f-RI-bbq" secondAttribute="trailing" id="E2c-BS-mM7"/>
-                <constraint firstItem="W1f-RI-bbq" firstAttribute="top" secondItem="LjK-Xc-wau" secondAttribute="top" id="I5O-Mq-Hnc"/>
-                <constraint firstItem="LjK-Xc-wau" firstAttribute="bottom" secondItem="GVq-1A-5VZ" secondAttribute="bottom" constant="53" id="TGR-5O-JMo"/>
-                <constraint firstItem="GVq-1A-5VZ" firstAttribute="top" secondItem="W1f-RI-bbq" secondAttribute="bottom" constant="394" id="l1j-OP-P6Q"/>
-                <constraint firstItem="LjK-Xc-wau" firstAttribute="bottom" secondItem="W1f-RI-bbq" secondAttribute="bottom" constant="600" id="wjy-Is-HmC"/>
+                <constraint firstItem="LjK-Xc-wau" firstAttribute="bottom" secondItem="GVq-1A-5VZ" secondAttribute="bottom" id="dv8-lD-8qA"/>
+                <constraint firstItem="GVq-1A-5VZ" firstAttribute="height" secondItem="W1f-RI-bbq" secondAttribute="height" multiplier="4:1" id="wbz-Ln-ur6"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="LjK-Xc-wau"/>
             <point key="canvasLocation" x="126.08695652173914" y="152.00892857142856"/>
