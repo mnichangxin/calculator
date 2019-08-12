@@ -22,7 +22,21 @@
             <subviews>
                 <view contentMode="scaleToFill" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="W1f-RI-bbq">
                     <rect key="frame" x="0.0" y="44" width="414" height="163.5"/>
+                    <subviews>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="j4P-wt-zBg">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="163.5"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                    </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="j4P-wt-zBg" firstAttribute="top" secondItem="W1f-RI-bbq" secondAttribute="top" id="1pg-h7-P8m"/>
+                        <constraint firstItem="j4P-wt-zBg" firstAttribute="leading" secondItem="W1f-RI-bbq" secondAttribute="leading" id="409-Ek-Sdk"/>
+                        <constraint firstAttribute="trailing" secondItem="j4P-wt-zBg" secondAttribute="trailing" id="7Zw-ab-ZOM"/>
+                        <constraint firstAttribute="bottom" secondItem="j4P-wt-zBg" secondAttribute="bottom" id="igf-oh-Vo2"/>
+                    </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GVq-1A-5VZ">
                     <rect key="frame" x="0.0" y="207.5" width="414" height="654.5"/>
