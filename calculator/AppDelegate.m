@@ -16,10 +16,24 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = [[UIViewController alloc] init];
     
-    CGRect firstFrame = self.window.bounds;
-    HypnosisView *firstView = [[HypnosisView alloc] initWithFrame:firstFrame];
+    CGRect screenRect = self.window.bounds;
     
-    [self.window.rootViewController.view addSubview:firstView];
+    CGRect bigRect = screenRect;
+    bigRect.size.width *= 2.0;
+    
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:screenRect];
+    HypnosisView *firstView = [[HypnosisView alloc] initWithFrame:screenRect];
+    
+    screenRect.origin.x += screenRect.size.width;
+    
+    HypnosisView *secondView = [[HypnosisView alloc] initWithFrame:screenRect];
+    
+    [scrollView addSubview:firstView];
+    [scrollView addSubview:secondView];
+    [scrollView setContentSize:bigRect.size];
+    [scrollView setPagingEnabled:YES];
+
+    [self.window.rootViewController.view addSubview:scrollView];
     [self.window setBackgroundColor:[UIColor whiteColor]];
     [self.window makeKeyAndVisible];
     

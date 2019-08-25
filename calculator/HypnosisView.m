@@ -34,8 +34,6 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    NSLog(@"%@ was touched", self);
-    
     float red = (arc4random() % 100) / 100.0;
     float green = (arc4random() % 100) / 100.0;
     float blue = (arc4random() % 100) / 100.0;
