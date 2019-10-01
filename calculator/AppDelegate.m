@@ -22,7 +22,7 @@
     bigRect.size.width *= 2.0;
     
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:screenRect];
-    HypnosisView *firstView = [[HypnosisView alloc] initWithFrame:screenRect];` 
+    HypnosisView *firstView = [[HypnosisView alloc] initWithFrame:screenRect];
     
     screenRect.origin.x += screenRect.size.width;
     
