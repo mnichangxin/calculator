@@ -2,16 +2,12 @@
 
 @interface ViewController : UIViewController
 
-@property (nonatomic) int currentQuestionIndex;
-@property (nonatomic, copy) NSArray *questions;
-@property (nonatomic, copy) NSArray *answers;
+@property (weak, nonatomic) NSString *displayContent;
+@property (weak, nonatomic) IBOutlet UILabel *display;
+@property (weak, nonatomic) IBOutlet UIButton *allClearButton;
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *numbericButtons;
 
-@property (nonatomic, weak) IBOutlet UILabel *questionLabel;
-@property (nonatomic, weak) IBOutlet UILabel *answerLabel;
-@property (nonatomic, weak) IBOutlet UIButton *showQuestionButton;
-@property (nonatomic, weak) IBOutlet UIButton *showAnswerButton;
-
-//- (IBAction)showQuestion:(id)sender;
-//- (IBAction)showAnswer:(id)sender;
+- (IBAction)numbericButtonClick:(id)sender;
+- (IBAction)allClearButtonClick:(id)sender;
 
 @end

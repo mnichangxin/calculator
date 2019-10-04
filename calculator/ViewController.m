@@ -4,24 +4,24 @@
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        self.questions = @[@"1 + 1 = ?", @"Where's the capital of China?", @"From what's cognac made?"];
-        self.answers = @[@"2", @"Beijing", @"Grapes"];
-    }
     return self;
 }
-- (IBAction)showQuestion:(id)sender {
-    self.currentQuestionIndex++;
-    if (_currentQuestionIndex == [self.questions count]) {
-        self.currentQuestionIndex = 0;
+- (void)updateDisplay:(bool)isWithPrevDisplayContent {
+    NSString *prevDisplayContent = @"";
+    if (isWithPrevDisplayContent) {
+        prevDisplayContent = [self.display text];
     }
-    NSString *question = [self.questions objectAtIndex:self.currentQuestionIndex];
-    self.questionLabel.text = question;
-    self.answerLabel.text = @"???";
+    NSString *nextDisplayContent = [NSString stringWithFormat:@"%@%@", prevDisplayContent, self.displayContent];
+    [self.display setText:nextDisplayContent];
 }
-- (IBAction)showAnswer:(id)sender {
-    NSString *answer = [self.answers objectAtIndex:self.currentQuestionIndex];
-    self.answerLabel.text = answer;
+- (IBAction)numbericButtonClick:(id)sender {
+    UIButton *button = (UIButton *) sender;
+    [self setDisplayContent:[[button titleLabel] text]];
+    [self updateDisplay:YES];
+}
+- (IBAction)allClearButtonClick:(id)sender {
+    [self setDisplayContent:@""];
+    [self updateDisplay:NO];
 }
 
 @end
