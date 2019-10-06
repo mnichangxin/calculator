@@ -1,13 +1,21 @@
 #import <UIKit/UIKit.h>
 
+typedef enum {
+    OperateTypeNone = 0,
+    OperateTypeAddition = 1,
+    OperateTypeSubtraction = 2,
+    OperateTypeMultiplication = 3,
+    OperateTypeDivision = 4
+} OperateType;
+
 @interface ViewController : UIViewController
 
-@property (weak, nonatomic) NSString *displayContent;
-@property (weak, nonatomic) IBOutlet UILabel *display;
-@property (weak, nonatomic) IBOutlet UIButton *allClearButton;
-@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *numbericButtons;
+@property (nonatomic, copy) NSString *prevText;
+@property (nonatomic, copy) NSString *text;
+@property (nonatomic, assign) OperateType operateType;
+@property (nonatomic, weak) IBOutlet UILabel *display;
+@property (nonatomic, strong) IBOutletCollection(UIButton) NSArray *buttons;
 
-- (IBAction)numbericButtonClick:(id)sender;
-- (IBAction)allClearButtonClick:(id)sender;
+- (IBAction)buttonClick:(id)sender;
 
 @end
