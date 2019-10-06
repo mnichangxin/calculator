@@ -11,6 +11,23 @@
 - (void)updateDisplayWithText:(NSString *)text {
     [self.display setText:text];
 }
+- (void)updateOperateWithButtonTag:(int)buttonTag {
+    NSArray *buttons = self.buttons;
+    UIColor *whiteColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
+    UIColor *mixColor = [UIColor colorWithRed:214.0/255 green:145.0/255 blue:63.0/255 alpha:1.0];
+    for (UIButton *button in buttons) {
+        int curButtonTag = (int)button.tag;
+        if (curButtonTag >= 111 && curButtonTag <= 114) {
+            if (curButtonTag == buttonTag) {
+                [button setTitleColor:mixColor forState:UIControlStateNormal];
+                [button setBackgroundColor:whiteColor];
+            } else {
+                [button setTitleColor:whiteColor forState:UIControlStateNormal];
+                [button setBackgroundColor:mixColor];
+            }
+        }
+    }
+}
 - (void)allClean {
     [self setText:@""];
     [self updateDisplayWithText:self.text];
@@ -45,24 +62,22 @@
         case 112:
         case 113:
         case 114: {
-            int operateType = (int)button.tag - 110;
-            [button setBackgroundColor:UIColor.whiteColor];
-            [button setTitleColor:[UIColor colorWithRed:204.0/255 green:147.0/255 blue:79.0/255 alpha:1.0] forState:UIControlStateNormal];
-            if (self.operateType) {
-                
-            } else if (self.text.length) {
-                [self setOperateType:operateType];
-                [self setPrevText:self.text];
-                [self setText:@""];
-//                [self updateDisplayWithText:self.]
+                int operateType = (int)button.tag - 110;
+                if (self.operateType) {
+                    
+                } else if (self.text.length) {
+                    [self setOperateType:operateType];
+                    [self setPrevText:self.text];
+                    [self setText:@""];
+                }
             }
-        }
-        break;
+            break;
         // AC
         case 118:
             [self allClean];
             break;
     }
+    [self updateOperateWithButtonTag:(int)button.tag];
     [self updateDisplayWithText:self.text];
 }
 
