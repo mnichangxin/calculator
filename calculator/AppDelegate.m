@@ -1,6 +1,5 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
-//#import "HypnosisView.h"
 
 @implementation AppDelegate
 
