@@ -31,6 +31,32 @@
     [mutableStr appendString:str2];
     return [NSString stringWithString:mutableStr];
 }
+- (NSString *)calculateWithPrevText:(NSString *)prevText andText:(NSString *)text {
+    double preValue = prevText.doubleValue;
+    double sufValue = text.doubleValue;
+    double result = 0;
+    if (self.operateType == OperateTypeAddition) {
+        result = preValue + sufValue;
+    } else if (self.operateType == OperateTypeSubtraction) {
+        result = preValue - sufValue;
+    } else if (self.operateType == OperateTypeMultiplication) {
+        result = preValue * sufValue;
+    } else if (self.operateType == OperateTypeDivision) {
+        result = preValue / sufValue;
+    }
+    NSString *resultStr = [NSString stringWithFormat:@"%.8g", result];
+    if ([resultStr containsString:@"e"]) {
+        NSArray *arr = [resultStr componentsSeparatedByString:@"e"];
+        if ([arr[1] intValue] < 10 && [arr[1] intValue] > 0) {
+            resultStr = [NSString stringWithFormat:@"%@", @(result)];
+        }
+    } else if ([resultStr isEqualToString:@"inf"]) {
+        resultStr = @"";
+    }
+    [self allClean];
+    [self setText:resultStr];
+    return resultStr;
+}
 - (void)updateDisplayWithText:(NSString *)text {
     [self.display setText:[self getCommaTextWithString:text]];
 }
@@ -52,7 +78,9 @@
     }
 }
 - (void)allClean {
+    [self setPrevText:@""];
     [self setText:@""];
+    [self setOperateType:OperateTypeNone];
     [self updateDisplayWithText:self.text];
 }
 - (IBAction)buttonClick:(id)sender {
@@ -88,15 +116,21 @@
                 int operateType = (int)button.tag - 110;
                 if (self.operateType) {
                     if (self.text.length) {
-                        
-                    } else {
-                        
+                        [self setPrevText:[self calculateWithPrevText:self.prevText andText:self.text]];
+//                        [self setText:@""];
                     }
+                    [self setOperateType:operateType];
                 } else if (self.text.length) {
                     [self setOperateType:operateType];
                     [self setPrevText:self.text];
                     [self setText:@""];
                 }
+            }
+            break;
+        // =
+        case 115:
+            if (self.operateType && self.text.length) {
+                [self setText:[self calculateWithPrevText:self.prevText andText:self.text]];
             }
             break;
         // AC
