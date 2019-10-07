@@ -8,8 +8,31 @@
     [self setPrevText:@""];
     [self setOperateType:OperateTypeNone];
 }
+- (NSString *)getCommaTextWithString:(NSString *)string {
+    if ([string containsString:@"e"]) {
+        return string;
+    }
+    BOOL sign = [string hasPrefix:@"-"];
+    NSString *str = sign ? [string substringFromIndex:1] : string;
+    BOOL FLOAT = [string containsString:@"."];
+    NSString *str1 = FLOAT ? [str componentsSeparatedByString:@"."][0] : str;
+    NSString *str2 = FLOAT ? [NSString stringWithFormat:@".%@", [str componentsSeparatedByString:@"."][1]] : @"";
+    NSMutableString *mutableStr = [NSMutableString stringWithString:str1];
+    for (int i = 3; i < 300; i += 3) {
+        if (str1.length > i) {
+            [mutableStr insertString:@"," atIndex:str1.length - i];
+        } else {
+            break;
+        }
+    }
+    if (sign) {
+        [mutableStr insertString:@"-" atIndex:0];
+    }
+    [mutableStr appendString:str2];
+    return [NSString stringWithString:mutableStr];
+}
 - (void)updateDisplayWithText:(NSString *)text {
-    [self.display setText:text];
+    [self.display setText:[self getCommaTextWithString:text]];
 }
 - (void)updateOperateWithButtonTag:(int)buttonTag {
     NSArray *buttons = self.buttons;
@@ -64,7 +87,11 @@
         case 114: {
                 int operateType = (int)button.tag - 110;
                 if (self.operateType) {
-                    
+                    if (self.text.length) {
+                        
+                    } else {
+                        
+                    }
                 } else if (self.text.length) {
                     [self setOperateType:operateType];
                     [self setPrevText:self.text];
