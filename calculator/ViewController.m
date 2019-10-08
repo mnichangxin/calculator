@@ -6,6 +6,7 @@
     [super viewDidLoad];
     [self setText:@""];
     [self setPrevText:@""];
+    [self setIsEqual:NO];
     [self setOperateType:OperateTypeNone];
 }
 - (NSString *)getCommaTextWithString:(NSString *)string {
@@ -53,8 +54,8 @@
     } else if ([resultStr isEqualToString:@"inf"]) {
         resultStr = @"";
     }
-    [self allClean];
-    [self setText:resultStr];
+//    [self allClean];
+//    [self setText:resultStr];
     return resultStr;
 }
 - (void)updateDisplayWithText:(NSString *)text {
@@ -97,12 +98,20 @@
         case 107:
         case 108:
         case 109:
+            if (self.isEqual) {
+                [self setText:@""];
+                [self setIsEqual:NO];
+            }
             if (self.text.length == 1 && [[self.text substringToIndex:1] isEqualToString:@"0"]) {
                 return;
             }
             self.text = [NSString stringWithFormat:@"%@%@", self.text, button.currentTitle];
             break;
         case 110:
+            if (self.isEqual) {
+                [self setText:@""];
+                [self setIsEqual:NO];
+            }
             if (!self.text.length || [self.text containsString:@"."]) {
                 return;
             }
@@ -116,10 +125,11 @@
                 int operateType = (int)button.tag - 110;
                 if (self.operateType) {
                     if (self.text.length) {
+                        [self setOperateType:operateType];
                         [self setPrevText:[self calculateWithPrevText:self.prevText andText:self.text]];
-//                        [self setText:@""];
+                        NSLog(@"%@", self.prevText);
+                        [self setText:@""];
                     }
-                    [self setOperateType:operateType];
                 } else if (self.text.length) {
                     [self setOperateType:operateType];
                     [self setPrevText:self.text];
@@ -131,6 +141,8 @@
         case 115:
             if (self.operateType && self.text.length) {
                 [self setText:[self calculateWithPrevText:self.prevText andText:self.text]];
+                [self setIsEqual:YES];
+                [self setOperateType:OperateTypeNone];
             }
             break;
         // AC
