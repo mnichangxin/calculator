@@ -12,6 +12,7 @@ typedef enum {
 
 @property (nonatomic, copy) NSString *prevText;
 @property (nonatomic, copy) NSString *text;
+@property (nonatomic, copy) NSString *displayText;
 @property (nonatomic, assign) OperateType operateType;
 @property (nonatomic, assign) BOOL isEqual;
 @property (nonatomic, weak) IBOutlet UILabel *display;

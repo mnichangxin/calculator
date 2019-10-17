@@ -6,6 +6,7 @@
     [super viewDidLoad];
     [self setText:@""];
     [self setPrevText:@""];
+    [self setDisplayText:@""];
     [self setIsEqual:NO];
     [self setOperateType:OperateTypeNone];
 }
@@ -54,12 +55,13 @@
     } else if ([resultStr isEqualToString:@"inf"]) {
         resultStr = @"";
     }
-//    [self allClean];
-//    [self setText:resultStr];
     return resultStr;
 }
 - (void)updateDisplayWithText:(NSString *)text {
     [self.display setText:[self getCommaTextWithString:text]];
+}
+- (void)updateDisplayWithDisplayText:(NSString *)displayText {
+    [self.display setText:[self getCommaTextWithString:displayText]];
 }
 - (void)updateOperateWithButtonTag:(int)buttonTag {
     NSArray *buttons = self.buttons;
@@ -81,6 +83,7 @@
 - (void)allClean {
     [self setPrevText:@""];
     [self setText:@""];
+    [self setDisplayText:@""];
     [self setOperateType:OperateTypeNone];
     [self updateDisplayWithText:self.text];
 }
@@ -106,6 +109,7 @@
                 return;
             }
             self.text = [NSString stringWithFormat:@"%@%@", self.text, button.currentTitle];
+            self.displayText = self.text;
             break;
         case 110:
             if (self.isEqual) {
@@ -116,6 +120,7 @@
                 return;
             }
             self.text = [NSString stringWithFormat:@"%@%@", self.text, button.currentTitle];
+            self.displayText = self.text;
             break;
         // (+, -, *, /)
         case 111:
@@ -127,7 +132,7 @@
                     if (self.text.length) {
                         [self setOperateType:operateType];
                         [self setPrevText:[self calculateWithPrevText:self.prevText andText:self.text]];
-                        NSLog(@"%@", self.prevText);
+                        [self setDisplayText:self.prevText];
                         [self setText:@""];
                     }
                 } else if (self.text.length) {
@@ -140,7 +145,7 @@
         // =
         case 115:
             if (self.operateType && self.text.length) {
-                [self setText:[self calculateWithPrevText:self.prevText andText:self.text]];
+                [self setDisplayText:[self calculateWithPrevText:self.prevText andText:self.text]];
                 [self setIsEqual:YES];
                 [self setOperateType:OperateTypeNone];
             }
@@ -151,7 +156,7 @@
             break;
     }
     [self updateOperateWithButtonTag:(int)button.tag];
-    [self updateDisplayWithText:self.text];
+    [self updateDisplayWithText:self.displayText];
 }
 
 @end
