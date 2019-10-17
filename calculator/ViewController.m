@@ -9,6 +9,12 @@
     [self setDisplayText:@""];
     [self setIsEqual:NO];
     [self setOperateType:OperateTypeNone];
+    [self setUIButtonCornerRaduis:[self buttons]];
+}
+- (void)setUIButtonCornerRaduis:(NSArray *) buttons {
+    for (UIButton *button in buttons) {
+        [button.layer setCornerRadius:30.f];
+    }
 }
 - (NSString *)getCommaTextWithString:(NSString *)string {
     if ([string containsString:@"e"]) {
