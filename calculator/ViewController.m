@@ -13,7 +13,7 @@
 }
 - (void)setUIButtonCornerRaduis:(NSArray *) buttons {
     for (UIButton *button in buttons) {
-        [button.layer setCornerRadius:30.f];
+        [button.layer setCornerRadius:48.f];
     }
 }
 - (NSString *)getCommaTextWithString:(NSString *)string {
