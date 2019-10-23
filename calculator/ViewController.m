@@ -156,6 +156,12 @@
                 [self setOperateType:OperateTypeNone];
             }
             break;
+        // %
+        case 116:
+            break;
+        // +/-
+        case 117:
+            break;
         // AC
         case 118:
             [self allClean];
