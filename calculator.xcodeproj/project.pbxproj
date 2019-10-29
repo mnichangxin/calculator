@@ -58,9 +58,9 @@
 		0BDC06B72368A22F00FD4BE3 /* calculator */ = {
 			isa = PBXGroup;
 			children = (
+				0BDC06DF2368A4AB00FD4BE3 /* xib */,
 				0BDC06D92368A2F900FD4BE3 /* Controllers */,
 				0BDC06D52368A2F100FD4BE3 /* Application */,
-				0BDC06D32368A2DA00FD4BE3 /* ViewController.xib */,
 				0BDC06D12368A2D300FD4BE3 /* main.m */,
 				0BDC06C92368A22F00FD4BE3 /* Info.plist */,
 			);
@@ -83,6 +83,14 @@
 				0BDC06DB2368A2F900FD4BE3 /* ViewController.h */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0BDC06DF2368A4AB00FD4BE3 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				0BDC06D32368A2DA00FD4BE3 /* ViewController.xib */,
+			);
+			path = xib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
