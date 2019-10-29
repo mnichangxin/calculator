@@ -39,6 +39,7 @@
     [mutableStr appendString:str2];
     return [NSString stringWithString:mutableStr];
 }
+// Calculate with "=" operate
 - (NSString *)calculateWithPrevText:(NSString *)prevText andText:(NSString *)text {
     double preValue = prevText.doubleValue;
     double sufValue = text.doubleValue;
@@ -61,6 +62,28 @@
     } else if ([resultStr isEqualToString:@"inf"]) {
         resultStr = @"";
     }
+    return resultStr;
+}
+// Caculate with "%" operate
+- (NSString *)percentWithText:(NSString *)text {
+    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+    [numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    float resultNum = [[numberFormatter numberFromString:text] floatValue];
+    if (resultNum) {
+        resultNum = resultNum / 100;
+    }
+    NSString *resultStr = [numberFormatter stringFromNumber:[NSNumber numberWithFloat:resultNum]];
+    return resultStr;
+}
+// Caculate with "+/-" operate
+- (NSString *)negateWithText:(NSString *)text {
+    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+    [numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    float resultNum = [[numberFormatter numberFromString:text] floatValue];
+    if (resultNum) {
+        resultNum = -resultNum;
+    }
+    NSString *resultStr = [numberFormatter stringFromNumber:[NSNumber numberWithFloat:resultNum]];
     return resultStr;
 }
 - (void)updateDisplayWithText:(NSString *)text {
@@ -158,9 +181,12 @@
             break;
         // %
         case 116:
+            [self setDisplayText:[self percentWithText:self.text]];
+            [self setIsEqual:YES];
             break;
         // +/-
         case 117:
+            [self setDisplayText:[self negateWithText:self.text]];
             break;
         // AC
         case 118:
