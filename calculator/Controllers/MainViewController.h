@@ -8,7 +8,7 @@ typedef enum {
     OperateTypeDivision = 4
 } OperateType;
 
-@interface ViewController : UIViewController
+@interface MainViewController : UIViewController
 
 @property (nonatomic, copy) NSString *prevText;
 @property (nonatomic, copy) NSString *text;
