@@ -8,22 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		0BDC06D22368A2D300FD4BE3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDC06D12368A2D300FD4BE3 /* main.m */; };
-		0BDC06D42368A2DA00FD4BE3 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BDC06D32368A2DA00FD4BE3 /* MainViewController.xib */; };
 		0BDC06D82368A2F100FD4BE3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDC06D72368A2F100FD4BE3 /* AppDelegate.m */; };
 		0BDC06DC2368A2F900FD4BE3 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDC06DA2368A2F900FD4BE3 /* MainViewController.m */; };
+		CB6BB072236C390C00B0BB10 /* ScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6BB071236C390C00B0BB10 /* ScreenViewController.m */; };
+		CB6BB075236C396D00B0BB10 /* ButtonCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6BB074236C396D00B0BB10 /* ButtonCollection.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0BDC06B52368A22F00FD4BE3 /* calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BDC06C92368A22F00FD4BE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0BDC06D12368A2D300FD4BE3 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		0BDC06D32368A2DA00FD4BE3 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		0BDC06D62368A2F100FD4BE3 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0BDC06D72368A2F100FD4BE3 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0BDC06DA2368A2F900FD4BE3 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		0BDC06DB2368A2F900FD4BE3 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		0BDC06DD2368A36C00FD4BE3 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		0BDC06DE2368A36C00FD4BE3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		CB6BB070236C390C00B0BB10 /* ScreenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScreenViewController.h; sourceTree = "<group>"; };
+		CB6BB071236C390C00B0BB10 /* ScreenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScreenViewController.m; sourceTree = "<group>"; };
+		CB6BB073236C396D00B0BB10 /* ButtonCollection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ButtonCollection.h; sourceTree = "<group>"; };
+		CB6BB074236C396D00B0BB10 /* ButtonCollection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ButtonCollection.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +62,6 @@
 		0BDC06B72368A22F00FD4BE3 /* calculator */ = {
 			isa = PBXGroup;
 			children = (
-				0BDC06DF2368A4AB00FD4BE3 /* xib */,
 				0BDC06D92368A2F900FD4BE3 /* Controllers */,
 				0BDC06D52368A2F100FD4BE3 /* Application */,
 				0BDC06D12368A2D300FD4BE3 /* main.m */,
@@ -81,16 +84,12 @@
 			children = (
 				0BDC06DB2368A2F900FD4BE3 /* MainViewController.h */,
 				0BDC06DA2368A2F900FD4BE3 /* MainViewController.m */,
+				CB6BB070236C390C00B0BB10 /* ScreenViewController.h */,
+				CB6BB071236C390C00B0BB10 /* ScreenViewController.m */,
+				CB6BB073236C396D00B0BB10 /* ButtonCollection.h */,
+				CB6BB074236C396D00B0BB10 /* ButtonCollection.m */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		0BDC06DF2368A4AB00FD4BE3 /* xib */ = {
-			isa = PBXGroup;
-			children = (
-				0BDC06D32368A2DA00FD4BE3 /* MainViewController.xib */,
-			);
-			path = xib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,7 +149,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BDC06D42368A2DA00FD4BE3 /* MainViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +161,8 @@
 			files = (
 				0BDC06DC2368A2F900FD4BE3 /* MainViewController.m in Sources */,
 				0BDC06D82368A2F100FD4BE3 /* AppDelegate.m in Sources */,
+				CB6BB072236C390C00B0BB10 /* ScreenViewController.m in Sources */,
+				CB6BB075236C396D00B0BB10 /* ButtonCollection.m in Sources */,
 				0BDC06D22368A2D300FD4BE3 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
