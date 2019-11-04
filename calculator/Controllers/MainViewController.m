@@ -14,9 +14,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [[self view] setBackgroundColor:UIColor.blackColor];
-    [[self view] addSubview:[[[ScreenViewController alloc] init] view]];
+//    [[self view] addSubview:[[[ScreenViewController alloc] init] view]];
+//    [self setView:[[ScreenViewController alloc] init]];
     
-//    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+//    UICollectionViewFlowLayout l;;;;;;;;;ll;l*layout = [[UICollectionViewFlowLayout alloc] init];
 //    [layout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
 //    [layout setItemSize:CGSizeMake(100, 100)];
 //    [layout setMinimumInteritemSpacing:10.0];
