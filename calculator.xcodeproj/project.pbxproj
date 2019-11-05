@@ -10,8 +10,8 @@
 		0BDC06D22368A2D300FD4BE3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDC06D12368A2D300FD4BE3 /* main.m */; };
 		0BDC06D82368A2F100FD4BE3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDC06D72368A2F100FD4BE3 /* AppDelegate.m */; };
 		0BDC06DC2368A2F900FD4BE3 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDC06DA2368A2F900FD4BE3 /* MainViewController.m */; };
-		CB6BB072236C390C00B0BB10 /* ScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6BB071236C390C00B0BB10 /* ScreenViewController.m */; };
-		CB6BB075236C396D00B0BB10 /* ButtonCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6BB074236C396D00B0BB10 /* ButtonCollection.m */; };
+		CB6BB072236C390C00B0BB10 /* ScreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6BB071236C390C00B0BB10 /* ScreenView.m */; };
+		CB6BB075236C396D00B0BB10 /* ButtonCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6BB074236C396D00B0BB10 /* ButtonCollectionView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,10 +24,10 @@
 		0BDC06DB2368A2F900FD4BE3 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		0BDC06DD2368A36C00FD4BE3 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		0BDC06DE2368A36C00FD4BE3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		CB6BB070236C390C00B0BB10 /* ScreenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScreenViewController.h; sourceTree = "<group>"; };
-		CB6BB071236C390C00B0BB10 /* ScreenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScreenViewController.m; sourceTree = "<group>"; };
-		CB6BB073236C396D00B0BB10 /* ButtonCollection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ButtonCollection.h; sourceTree = "<group>"; };
-		CB6BB074236C396D00B0BB10 /* ButtonCollection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ButtonCollection.m; sourceTree = "<group>"; };
+		CB6BB070236C390C00B0BB10 /* ScreenView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScreenView.h; sourceTree = "<group>"; };
+		CB6BB071236C390C00B0BB10 /* ScreenView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScreenView.m; sourceTree = "<group>"; };
+		CB6BB073236C396D00B0BB10 /* ButtonCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ButtonCollectionView.h; sourceTree = "<group>"; };
+		CB6BB074236C396D00B0BB10 /* ButtonCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ButtonCollectionView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,10 +84,10 @@
 			children = (
 				0BDC06DB2368A2F900FD4BE3 /* MainViewController.h */,
 				0BDC06DA2368A2F900FD4BE3 /* MainViewController.m */,
-				CB6BB070236C390C00B0BB10 /* ScreenViewController.h */,
-				CB6BB071236C390C00B0BB10 /* ScreenViewController.m */,
-				CB6BB073236C396D00B0BB10 /* ButtonCollection.h */,
-				CB6BB074236C396D00B0BB10 /* ButtonCollection.m */,
+				CB6BB070236C390C00B0BB10 /* ScreenView.h */,
+				CB6BB071236C390C00B0BB10 /* ScreenView.m */,
+				CB6BB073236C396D00B0BB10 /* ButtonCollectionView.h */,
+				CB6BB074236C396D00B0BB10 /* ButtonCollectionView.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -161,8 +161,8 @@
 			files = (
 				0BDC06DC2368A2F900FD4BE3 /* MainViewController.m in Sources */,
 				0BDC06D82368A2F100FD4BE3 /* AppDelegate.m in Sources */,
-				CB6BB072236C390C00B0BB10 /* ScreenViewController.m in Sources */,
-				CB6BB075236C396D00B0BB10 /* ButtonCollection.m in Sources */,
+				CB6BB072236C390C00B0BB10 /* ScreenView.m in Sources */,
+				CB6BB075236C396D00B0BB10 /* ButtonCollectionView.m in Sources */,
 				0BDC06D22368A2D300FD4BE3 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

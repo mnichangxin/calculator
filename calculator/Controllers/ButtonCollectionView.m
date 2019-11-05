@@ -1,4 +1,4 @@
-#import "ButtonCollection.h"
+#import "ButtonCollectionView.h"
 
 @interface ButtonCollection ()
 
