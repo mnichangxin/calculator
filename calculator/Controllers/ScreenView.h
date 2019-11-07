@@ -1,5 +1,5 @@
 #import <UIKit/UIKit.h>
 
-@interface ScreenViewController : UIView
+@interface ScreenView : UIView
 
 @end

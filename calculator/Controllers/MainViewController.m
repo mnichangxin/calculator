@@ -1,6 +1,6 @@
 #import "MainViewController.h"
-#import "ScreenViewController.h"
-#import "ButtonCollection.h"
+#import "ScreenView.h"
+#import "ButtonCollectionView.h"
 
 @interface MainViewController() <UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -13,7 +13,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [[self view] setBackgroundColor:UIColor.blackColor];
+    [self.view setBackgroundColor:UIColor.blackColor];
+    [self.view addSubview:[[ScreenView alloc] initWithFrame:<#(CGRect)#>]];
 }
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return 2;
