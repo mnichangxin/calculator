@@ -15,6 +15,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0BA3685B23747CE9000AF327 /* macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = macros.h; sourceTree = "<group>"; };
+		0BA3685C2374811F000AF327 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		0BDC06B52368A22F00FD4BE3 /* calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BDC06C92368A22F00FD4BE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0BDC06D12368A2D300FD4BE3 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -41,6 +43,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0BA3685A23747CA6000AF327 /* Macros */ = {
+			isa = PBXGroup;
+			children = (
+				0BA3685B23747CE9000AF327 /* macros.h */,
+				0BA3685C2374811F000AF327 /* PrefixHeader.pch */,
+			);
+			path = Macros;
+			sourceTree = "<group>";
+		};
 		0BDC06AC2368A22F00FD4BE3 = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +73,7 @@
 		0BDC06B72368A22F00FD4BE3 /* calculator */ = {
 			isa = PBXGroup;
 			children = (
+				0BA3685A23747CA6000AF327 /* Macros */,
 				0BDC06D92368A2F900FD4BE3 /* Controllers */,
 				0BDC06D52368A2F100FD4BE3 /* Application */,
 				0BDC06D12368A2D300FD4BE3 /* main.m */,
@@ -284,6 +296,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/calculator/Macros/PrefixHeader.pch";
 				INFOPLIST_FILE = calculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -299,6 +312,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/calculator/Macros/PrefixHeader.pch";
 				INFOPLIST_FILE = calculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

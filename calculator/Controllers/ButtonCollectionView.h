@@ -1,5 +1,5 @@
 #import <UIKit/UIKit.h>
 
-@interface ButtonCollection : UIView
+@interface ButtonCollectionView : UIView
 
 @end
