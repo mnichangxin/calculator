@@ -15,8 +15,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0BA3685B23747CE9000AF327 /* macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = macros.h; sourceTree = "<group>"; };
-		0BA3685C2374811F000AF327 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		0BA3685B23747CE9000AF327 /* macrosMain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = macrosMain.h; sourceTree = "<group>"; };
+		0BA3685C2374811F000AF327 /* prefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = prefixHeader.pch; sourceTree = "<group>"; };
 		0BDC06B52368A22F00FD4BE3 /* calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BDC06C92368A22F00FD4BE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0BDC06D12368A2D300FD4BE3 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -26,6 +26,8 @@
 		0BDC06DB2368A2F900FD4BE3 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		0BDC06DD2368A36C00FD4BE3 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		0BDC06DE2368A36C00FD4BE3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		CB4AA17C2375086F00E4CC5A /* macrosCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = macrosCommon.h; sourceTree = "<group>"; };
+		CB4AA17D237508C300E4CC5A /* macrosScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = macrosScreen.h; sourceTree = "<group>"; };
 		CB6BB070236C390C00B0BB10 /* ScreenView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScreenView.h; sourceTree = "<group>"; };
 		CB6BB071236C390C00B0BB10 /* ScreenView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScreenView.m; sourceTree = "<group>"; };
 		CB6BB073236C396D00B0BB10 /* ButtonCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ButtonCollectionView.h; sourceTree = "<group>"; };
@@ -46,8 +48,9 @@
 		0BA3685A23747CA6000AF327 /* Macros */ = {
 			isa = PBXGroup;
 			children = (
-				0BA3685B23747CE9000AF327 /* macros.h */,
-				0BA3685C2374811F000AF327 /* PrefixHeader.pch */,
+				0BA3685B23747CE9000AF327 /* macrosMain.h */,
+				CB4AA17C2375086F00E4CC5A /* macrosCommon.h */,
+				CB4AA17D237508C300E4CC5A /* macrosScreen.h */,
 			);
 			path = Macros;
 			sourceTree = "<group>";
@@ -73,6 +76,7 @@
 		0BDC06B72368A22F00FD4BE3 /* calculator */ = {
 			isa = PBXGroup;
 			children = (
+				CB4AA17E2375321A00E4CC5A /* pch */,
 				0BA3685A23747CA6000AF327 /* Macros */,
 				0BDC06D92368A2F900FD4BE3 /* Controllers */,
 				0BDC06D52368A2F100FD4BE3 /* Application */,
@@ -102,6 +106,14 @@
 				CB6BB074236C396D00B0BB10 /* ButtonCollectionView.m */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CB4AA17E2375321A00E4CC5A /* pch */ = {
+			isa = PBXGroup;
+			children = (
+				0BA3685C2374811F000AF327 /* prefixHeader.pch */,
+			);
+			path = pch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,7 +308,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				GCC_PREFIX_HEADER = "$(SRCROOT)/calculator/Macros/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/calculator/pch/prefixHeader.pch";
 				INFOPLIST_FILE = calculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -312,7 +324,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				GCC_PREFIX_HEADER = "$(SRCROOT)/calculator/Macros/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/calculator/pch/prefixHeader.pch";
 				INFOPLIST_FILE = calculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

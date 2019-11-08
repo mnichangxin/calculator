@@ -1,6 +1,9 @@
 /*
- * Macros
+ * Macros main
  */
+
+#import "macrosCommon.h"
+#import "macrosScreen.h"
 
 #pragma mark - KScreen
 
