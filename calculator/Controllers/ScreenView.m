@@ -9,7 +9,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        [self setFrame:CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, SCREEM_VIEW_HEIGHT)];
+        [self setFrame:CGRectMake(0, 0, frame.size.width, SCREEM_VIEW_HEIGHT)];
         [self setBackgroundColor:UIColor.brownColor];
     }
     return self;
