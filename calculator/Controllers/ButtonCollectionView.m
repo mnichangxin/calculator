@@ -25,25 +25,26 @@
     
     CGFloat margin = 10.f;
     CGFloat width = (self.frame.size.width - margin * 5) / 4;
-     
-    for (int i = 1; i <= 20; i++) {
+    CGFloat height = width;
+
+    for (int i = 1; i <= 19; i++) {
         CGFloat bX = i % 4 > 0 ? width * (i % 4 - 1) + margin * (i % 4) : width * 3 + margin * 4;
         CGFloat bY = i % 4 > 0 ? width * (i / 4) + margin * (i / 4 + 1) : width * (i / 4 - 1) + margin * (i / 4);
         CGFloat bWidth = width;
+        CGFloat bHeight = height;
         
-        // Button(0, ., =)
         if (i == 17) {
-            bWidth = width * 2;
+            bWidth = width * 2 + margin;
         } else if (i == 18) {
-            bX = width * 2 + margin * 2;
+            bX = width * 2 + margin * 3;
         } else if (i == 19) {
-            bX = width * 3 + margin * 3;
+            bX = width * 3 + margin * 4;
         }
         
-        UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(bX, bY, bWidth, bWidth)];
+        UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(bX, bY, bWidth, bHeight)];
         
         [button setTitle:[NSString stringWithFormat:@"%d", i] forState:UIControlStateNormal];
-        [button setTag:[tags objectAtIndex:[NSNumber numberWithUnsignedInt:i]]];
+//        [button setTag:[tags objectAtIndex:[NSNumber numberWithUnsignedInt:i]]];
         [button.layer setBorderColor:UIColor.blackColor.CGColor];
         [button.layer setBorderWidth:1];
         [button.layer setCornerRadius:width / 2];
