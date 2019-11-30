@@ -6,4 +6,6 @@
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) UIColor *color;
 
+- (instancetype)initWithTag:(NSNumber *) tag andTitle:(NSString *)title andColor:(UIColor *)color;
+
 @end
