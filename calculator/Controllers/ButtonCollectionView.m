@@ -37,6 +37,7 @@
             @{@"tag": @110, @"title": @".", @"color": numColor},
             @{@"tag": @115, @"title": @"=", @"color": operatorColor}
         ];
+        self.buttonViews = [[NSMutableArray alloc] init];
         for (int i = 0; i < buttons.count; i++) {
             NSDictionary *button = [buttons objectAtIndex:i];
             Button *buttonView = [[Button alloc] initWithTag:[button valueForKey:@"tag"]
@@ -44,8 +45,6 @@
                                                  andColor:[button valueForKey:@"color"]];
             [[self buttonViews] addObject:buttonView];
         }
-        
-        NSLog(@"%i", self.buttonViews.count);
         [self setFrame:CGRectMake(0, SCREEM_VIEW_HEIGHT, frame.size.width, frame.size.height - SCREEM_VIEW_HEIGHT)];
         [self setBackgroundColor:UIColor.grayColor];
         self.buttonGroupCollectionView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height - KMagrinBottom)];
@@ -78,9 +77,13 @@
             bX = width * 3 + margin * 4;
         }
         
+        Button *buttonView = [buttonViews objectAtIndex:i];
+    
         UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(bX, bY, bWidth, bHeight)];
         
-        [button setTitle:[NSString stringWithFormat:@"%d", i] forState:UIControlStateNormal];
+        [button setTitle:[NSString stringWithFormat:@"%@", buttonView.title] forState:UIControlStateNormal];
+        [button setBackgroundColor:buttonView.color];
+        [button setTag:buttonView.tag];
         [button.layer setBorderColor:UIColor.blackColor.CGColor];
         [button.layer setBorderWidth:1];
         [button.layer setCornerRadius:width / 2];
