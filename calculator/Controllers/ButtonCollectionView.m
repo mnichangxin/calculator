@@ -76,8 +76,13 @@
         
         [buttonView setFrame:CGRectMake(bX, bY, bWidth, bHeight)];
         [buttonView.layer setCornerRadius:width / 2];
+        [buttonView addTarget:self action:@selector(onButtonViewTouch:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:buttonView];
     }
+}
+
+- (void)onButtonViewTouch:(UIButton *)sender {
+    NSLog(@"%li", sender.tag);
 }
 
 @end
