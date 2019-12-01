@@ -1,12 +1,5 @@
 #import "ButtonCollectionView.h"
-#import "Button.h"
-
-@interface ButtonCollectionView ()
-
-@property (nonatomic, strong) NSMutableArray *buttonViews;
-@property(nonatomic, strong) UIView *buttonGroupCollectionView;
-
-@end
+#import "ButtonView.h"
 
 @implementation ButtonCollectionView
 
@@ -17,38 +10,40 @@
         UIColor *operatorColor = UIColor.orangeColor;
         UIColor *numColor = UIColor.darkGrayColor;
         NSArray *buttons = @[
-            @{@"tag": @118, @"title": @"AC", @"color": spOperatorColor},
-            @{@"tag": @117, @"title": @"+/-", @"color": spOperatorColor},
-            @{@"tag": @116, @"title": @"%", @"color": spOperatorColor},
-            @{@"tag": @114, @"title": @"/", @"color": operatorColor},
-            @{@"tag": @107, @"title": @"7", @"color": numColor},
-            @{@"tag": @108, @"title": @"8", @"color": numColor},
-            @{@"tag": @109, @"title": @"9", @"color": numColor},
-            @{@"tag": @113, @"title": @"*", @"color": operatorColor},
-            @{@"tag": @104, @"title": @"4", @"color": numColor},
-            @{@"tag": @105, @"title": @"5", @"color": numColor},
-            @{@"tag": @106, @"title": @"6", @"color": numColor},
-            @{@"tag": @112, @"title": @"-", @"color": operatorColor},
-            @{@"tag": @101, @"title": @"1", @"color": numColor},
-            @{@"tag": @102, @"title": @"2", @"color": numColor},
-            @{@"tag": @103, @"title": @"3", @"color": numColor},
-            @{@"tag": @111, @"title": @"+", @"color": operatorColor},
-            @{@"tag": @100, @"title": @"0", @"color": numColor},
-            @{@"tag": @110, @"title": @".", @"color": numColor},
-            @{@"tag": @115, @"title": @"=", @"color": operatorColor}
+            @{@"tag": @118, @"title": @"AC", @"backgroundColor": spOperatorColor},
+            @{@"tag": @117, @"title": @"+/-", @"backgroundColor": spOperatorColor},
+            @{@"tag": @116, @"title": @"%", @"backgroundColor": spOperatorColor},
+            @{@"tag": @114, @"title": @"/", @"backgroundColor": operatorColor},
+            @{@"tag": @107, @"title": @"7", @"backgroundColor": numColor},
+            @{@"tag": @108, @"title": @"8", @"backgroundColor": numColor},
+            @{@"tag": @109, @"title": @"9", @"backgroundColor": numColor},
+            @{@"tag": @113, @"title": @"*", @"backgroundColor": operatorColor},
+            @{@"tag": @104, @"title": @"4", @"backgroundColor": numColor},
+            @{@"tag": @105, @"title": @"5", @"backgroundColor": numColor},
+            @{@"tag": @106, @"title": @"6", @"backgroundColor": numColor},
+            @{@"tag": @112, @"title": @"-", @"backgroundColor": operatorColor},
+            @{@"tag": @101, @"title": @"1", @"backgroundColor": numColor},
+            @{@"tag": @102, @"title": @"2", @"backgroundColor": numColor},
+            @{@"tag": @103, @"title": @"3", @"backgroundColor": numColor},
+            @{@"tag": @111, @"title": @"+", @"backgroundColor": operatorColor},
+            @{@"tag": @100, @"title": @"0", @"backgroundColor": numColor},
+            @{@"tag": @110, @"title": @".", @"backgroundColor": numColor},
+            @{@"tag": @115, @"title": @"=", @"backgroundColor": operatorColor}
         ];
+        
         self.buttonViews = [[NSMutableArray alloc] init];
+        
         for (int i = 0; i < buttons.count; i++) {
             NSDictionary *button = [buttons objectAtIndex:i];
-            Button *buttonView = [[Button alloc] initWithTag:[button valueForKey:@"tag"]
+            ButtonView *buttonView = [[ButtonView alloc] initWithTag:[[button valueForKey:@"tag"] intValue]
                                                  andTitle:[button valueForKey:@"title"]
-                                                 andColor:[button valueForKey:@"color"]];
+                                                 andBackgroundColor:[button valueForKey:@"backgroundColor"]];
             [[self buttonViews] addObject:buttonView];
         }
+        
         [self setFrame:CGRectMake(0, SCREEM_VIEW_HEIGHT, frame.size.width, frame.size.height - SCREEM_VIEW_HEIGHT)];
-//        [self setBackgroundColor:UIColor.grayColor];
+        
         self.buttonGroupCollectionView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height - KMagrinBottom)];
-//        [self.buttonGroupCollectionView setBackgroundColor:UIColor.linkColor];
         [self addSubview:self.buttonGroupCollectionView];
     }
     return self;
@@ -77,17 +72,11 @@
             bX = width * 3 + margin * 4;
         }
         
-        Button *buttonView = [buttonViews objectAtIndex:i];
-    
-        UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(bX, bY, bWidth, bHeight)];
+        ButtonView *buttonView = [buttonViews objectAtIndex:i];
         
-        [button setTitle:[NSString stringWithFormat:@"%@", buttonView.title] forState:UIControlStateNormal];
-        [button setBackgroundColor:buttonView.color];
-        [button setTag:[buttonView.tag intValue]];
-//        [button.layer setBorderColor:UIColor.blackColor.CGColor];
-//        [button.layer setBorderWidth:1];
-        [button.layer setCornerRadius:width / 2];
-        [self addSubview:button];
+        [buttonView setFrame:CGRectMake(bX, bY, bWidth, bHeight)];
+        [buttonView.layer setCornerRadius:width / 2];
+        [self addSubview:buttonView];
     }
 }
 

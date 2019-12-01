@@ -2,10 +2,6 @@
 #import "ScreenView.h"
 #import "ButtonCollectionView.h"
 
-@interface MainViewController()
-
-@end
-
 @implementation MainViewController
 
 - (void)viewDidLoad {
