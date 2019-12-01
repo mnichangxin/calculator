@@ -14,7 +14,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         UIColor *spOperatorColor = UIColor.grayColor;
-        UIColor *operatorColor = UIColor.yellowColor;
+        UIColor *operatorColor = UIColor.orangeColor;
         UIColor *numColor = UIColor.darkGrayColor;
         NSArray *buttons = @[
             @{@"tag": @118, @"title": @"AC", @"color": spOperatorColor},
@@ -46,9 +46,9 @@
             [[self buttonViews] addObject:buttonView];
         }
         [self setFrame:CGRectMake(0, SCREEM_VIEW_HEIGHT, frame.size.width, frame.size.height - SCREEM_VIEW_HEIGHT)];
-        [self setBackgroundColor:UIColor.grayColor];
+//        [self setBackgroundColor:UIColor.grayColor];
         self.buttonGroupCollectionView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height - KMagrinBottom)];
-        [self.buttonGroupCollectionView setBackgroundColor:UIColor.linkColor];
+//        [self.buttonGroupCollectionView setBackgroundColor:UIColor.linkColor];
         [self addSubview:self.buttonGroupCollectionView];
     }
     return self;
@@ -83,9 +83,9 @@
         
         [button setTitle:[NSString stringWithFormat:@"%@", buttonView.title] forState:UIControlStateNormal];
         [button setBackgroundColor:buttonView.color];
-        [button setTag:buttonView.tag];
-        [button.layer setBorderColor:UIColor.blackColor.CGColor];
-        [button.layer setBorderWidth:1];
+        [button setTag:[buttonView.tag intValue]];
+//        [button.layer setBorderColor:UIColor.blackColor.CGColor];
+//        [button.layer setBorderWidth:1];
         [button.layer setCornerRadius:width / 2];
         [self addSubview:button];
     }
