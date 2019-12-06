@@ -58,13 +58,17 @@
 			path = Macros;
 			sourceTree = "<group>";
 		};
-		0BBC32FD23819FA6009175C3 /* Models */ = {
+		0BBC32FD23819FA6009175C3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CB6BB070236C390C00B0BB10 /* ScreenView.h */,
+				CB6BB071236C390C00B0BB10 /* ScreenView.m */,
+				CB6BB073236C396D00B0BB10 /* ButtonCollectionView.h */,
+				CB6BB074236C396D00B0BB10 /* ButtonCollectionView.m */,
 				0BBC32FE23819FF8009175C3 /* ButtonView.h */,
 				0BBC33012381A3CF009175C3 /* ButtonView.m */,
 			);
-			path = Models;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		0BDC06AC2368A22F00FD4BE3 = {
@@ -88,7 +92,7 @@
 		0BDC06B72368A22F00FD4BE3 /* calculator */ = {
 			isa = PBXGroup;
 			children = (
-				0BBC32FD23819FA6009175C3 /* Models */,
+				0BBC32FD23819FA6009175C3 /* Views */,
 				CB4AA17E2375321A00E4CC5A /* pch */,
 				0BA3685A23747CA6000AF327 /* Macros */,
 				0BDC06D92368A2F900FD4BE3 /* Controllers */,
@@ -113,10 +117,6 @@
 			children = (
 				0BDC06DB2368A2F900FD4BE3 /* MainViewController.h */,
 				0BDC06DA2368A2F900FD4BE3 /* MainViewController.m */,
-				CB6BB070236C390C00B0BB10 /* ScreenView.h */,
-				CB6BB071236C390C00B0BB10 /* ScreenView.m */,
-				CB6BB073236C396D00B0BB10 /* ButtonCollectionView.h */,
-				CB6BB074236C396D00B0BB10 /* ButtonCollectionView.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";

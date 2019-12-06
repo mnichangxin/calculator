@@ -1,5 +1,6 @@
 #import "ButtonCollectionView.h"
 #import "ButtonView.h"
+#import "ScreenView.h"
 
 @implementation ButtonCollectionView
 
