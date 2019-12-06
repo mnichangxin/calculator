@@ -1,3 +1,4 @@
+#import "MainViewController.h"
 #import "ButtonCollectionView.h"
 #import "ButtonView.h"
 #import "ScreenView.h"
@@ -32,7 +33,7 @@
             @{@"tag": @115, @"title": @"=", @"backgroundColor": operatorColor}
         ];
         
-        self.buttonViews = [[NSMutableArray alloc] init];
+        [self setButtonViews:[[NSMutableArray alloc] init]];
         
         for (int i = 0; i < buttons.count; i++) {
             NSDictionary *button = [buttons objectAtIndex:i];
@@ -43,8 +44,7 @@
         }
         
         [self setFrame:CGRectMake(0, SCREEM_VIEW_HEIGHT, frame.size.width, frame.size.height - SCREEM_VIEW_HEIGHT)];
-        
-        self.buttonGroupCollectionView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height - KMagrinBottom)];
+        [self setButtonGroupCollectionView:[[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height - KMagrinBottom)]];        
         [self addSubview:self.buttonGroupCollectionView];
     }
     return self;
@@ -76,14 +76,15 @@
         ButtonView *buttonView = [buttonViews objectAtIndex:i];
         
         [buttonView setFrame:CGRectMake(bX, bY, bWidth, bHeight)];
-        [buttonView.layer setCornerRadius:width / 2];
+        [[buttonView layer] setCornerRadius:width / 2];
         [buttonView addTarget:self action:@selector(onButtonViewTouch:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:buttonView];
     }
 }
 
 - (void)onButtonViewTouch:(UIButton *)sender {
-    NSLog(@"%li", sender.tag);
+    MainViewController *mainViewController = [[MainViewController alloc] init];
+    [mainViewController onButtonViewTouch:sender];
 }
 
 @end
