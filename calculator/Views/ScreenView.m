@@ -12,7 +12,7 @@
 
 - (void)layoutSubviews {
     UILabel *screenLabel =  [[UILabel alloc] initWithFrame:CGRectMake(self.frame.origin.x + 20, self.frame.origin.y, self.frame.size.width - 40, self.frame.size.height)];
-    [screenLabel setText:@"123"];
+    [screenLabel setText:@""];
     [screenLabel setTextColor:UIColor.whiteColor];
     [screenLabel setFont:[UIFont systemFontOfSize:38]];
     [screenLabel setTextAlignment:NSTextAlignmentRight];
