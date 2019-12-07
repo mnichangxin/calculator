@@ -21,7 +21,6 @@
 }
 
 - (void)updateLabelTextWithScreenLabelText:(NSString *)screenLabelText {
-    NSLog(@"%@", screenLabelText);
     [[self screenLabel] setText:screenLabelText];
 }
 
