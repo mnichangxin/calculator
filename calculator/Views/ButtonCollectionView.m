@@ -2,6 +2,7 @@
 #import "ButtonCollectionView.h"
 #import "ButtonView.h"
 #import "ScreenView.h"
+#import "UIView+GCF.h"
 
 @implementation ButtonCollectionView
 
@@ -83,8 +84,10 @@
 }
 
 - (void)onButtonViewTouch:(UIButton *)sender {
-    MainViewController *mainViewController = [[MainViewController alloc] init];
-    [mainViewController onButtonViewTouch:sender];
+    UIViewController *currentController = [self getControllerFromView:self];
+    if (currentController && [MainViewController class] == [currentController class]) {
+        [(MainViewController *)currentController onButtonViewTouch:sender];
+    }
 }
 
 @end

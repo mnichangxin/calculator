@@ -12,6 +12,7 @@
 }
 
 - (void)onButtonViewTouch:(UIButton *)sender {
+    [[self screenView] updateLabelTextWithScreenLabelText:[sender titleForState:UIControlStateNormal]];
 //    switch (sender.tag) {
 //        // 0~9
 //        case 100:

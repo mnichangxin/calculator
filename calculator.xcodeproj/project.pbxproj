@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0BBC33022381A3CF009175C3 /* ButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BBC33012381A3CF009175C3 /* ButtonView.m */; };
+		0BD023D9239B831200E546BA /* UIView+GCF.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BD023D8239B831200E546BA /* UIView+GCF.m */; };
 		0BDC06D22368A2D300FD4BE3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDC06D12368A2D300FD4BE3 /* main.m */; };
 		0BDC06D82368A2F100FD4BE3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDC06D72368A2F100FD4BE3 /* AppDelegate.m */; };
 		0BDC06DC2368A2F900FD4BE3 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDC06DA2368A2F900FD4BE3 /* MainViewController.m */; };
@@ -20,6 +21,8 @@
 		0BA3685C2374811F000AF327 /* prefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = prefixHeader.pch; sourceTree = "<group>"; };
 		0BBC32FE23819FF8009175C3 /* ButtonView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ButtonView.h; sourceTree = "<group>"; };
 		0BBC33012381A3CF009175C3 /* ButtonView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ButtonView.m; sourceTree = "<group>"; };
+		0BD023D7239B831200E546BA /* UIView+GCF.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+GCF.h"; sourceTree = "<group>"; };
+		0BD023D8239B831200E546BA /* UIView+GCF.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+GCF.m"; sourceTree = "<group>"; };
 		0BDC06B52368A22F00FD4BE3 /* calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BDC06C92368A22F00FD4BE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0BDC06D12368A2D300FD4BE3 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -71,6 +74,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		0BD023D5239B806E00E546BA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0BD023D7239B831200E546BA /* UIView+GCF.h */,
+				0BD023D8239B831200E546BA /* UIView+GCF.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		0BDC06AC2368A22F00FD4BE3 = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +104,7 @@
 		0BDC06B72368A22F00FD4BE3 /* calculator */ = {
 			isa = PBXGroup;
 			children = (
+				0BD023D5239B806E00E546BA /* Utils */,
 				0BBC32FD23819FA6009175C3 /* Views */,
 				CB4AA17E2375321A00E4CC5A /* pch */,
 				0BA3685A23747CA6000AF327 /* Macros */,
@@ -199,6 +212,7 @@
 				0BDC06DC2368A2F900FD4BE3 /* MainViewController.m in Sources */,
 				0BDC06D82368A2F100FD4BE3 /* AppDelegate.m in Sources */,
 				CB6BB072236C390C00B0BB10 /* ScreenView.m in Sources */,
+				0BD023D9239B831200E546BA /* UIView+GCF.m in Sources */,
 				0BBC33022381A3CF009175C3 /* ButtonView.m in Sources */,
 				CB6BB075236C396D00B0BB10 /* ButtonCollectionView.m in Sources */,
 				0BDC06D22368A2D300FD4BE3 /* main.m in Sources */,
