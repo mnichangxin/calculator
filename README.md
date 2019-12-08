@@ -1,3 +1,4 @@
 # calculator
 
-An IOS calculator demo.
+Implementing with `xib`.
+
