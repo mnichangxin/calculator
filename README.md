@@ -4,7 +4,7 @@ An IOS calculator demo.
 
 ## :cat: Demo
 
-![](https://i.loli.net/2019/12/08/wbJqtkcsoFWrj3C.png)
+![calculator-demo.png](https://i.loli.net/2019/12/08/ifeWDtwrdZH6npc.png)
 
 ## :hammer: Development
 
