@@ -17,12 +17,9 @@ typedef enum {
 
 @property (nonatomic, copy) NSString *prevText;
 @property (nonatomic, copy) NSString *text;
-@property (nonatomic, copy) NSString *displayText;
+@property (nonatomic, copy) NSString *screenLabelText;
 @property (nonatomic, assign) BOOL isEqual;
 @property (nonatomic, assign) OperateType operateType;
-
-//@property (nonatomic, weak) IBOutlet UILabel *display;
-//@property (nonatomic, strong) IBOutletCollection(UIButton) NSArray *buttons;
 
 - (void)onButtonViewTouch:(UIButton *)sender;
 

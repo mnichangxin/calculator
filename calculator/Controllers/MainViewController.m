@@ -6,7 +6,7 @@
     [super viewDidLoad];
     [self setText:@""];
     [self setPrevText:@""];
-    [self setDisplayText:@""];
+    [self setScreenLabelText:@""];
     [self setIsEqual:NO];
     [self setOperateType:OperateTypeNone];
     [self setScreenView:[[ScreenView alloc] initWithFrame:self.view.frame]];
@@ -15,6 +15,8 @@
     [[self view] addSubview:[self screenView]];
     [[self view] addSubview:[self buttonCollectionView]];
 }
+
+#pragma mark - Formatter
 // Format string with comma
 - (NSString *)getCommaTextWithString:(NSString *)string {
     if ([string containsString:@"e"]) {
@@ -39,6 +41,8 @@
     [mutableStr appendString:str2];
     return [NSString stringWithString:mutableStr];
 }
+
+#pragma mark - Operate
 // Calculate with "=" operate
 - (NSString *)calculateWithPrevText:(NSString *)prevText andText:(NSString *)text {
     double preValue = prevText.doubleValue;
@@ -86,13 +90,15 @@
     NSString *resultStr = [numberFormatter stringFromNumber:[NSNumber numberWithFloat:resultNum]];
     return resultStr;
 }
+// Calculate with "AC" operate
 - (void)allClean {
     [self setPrevText:@""];
     [self setText:@""];
-    [self setDisplayText:@""];
+    [self setScreenLabelText:@""];
     [self setOperateType:OperateTypeNone];
-//    [self updateDisplayWithText:self.text];
 }
+
+#pragma mark - Event handler
 - (void)onButtonViewTouch:(UIButton *)sender {
     NSInteger buttonTag = [sender tag];
     NSString *buttonTitle = [sender titleForState:UIControlStateNormal];
@@ -115,8 +121,8 @@
             if (self.text.length == 1 && [[self.text substringToIndex:1] isEqualToString:@"0"]) {
                 return;
             }
-            self.text = [NSString stringWithFormat:@"%@%@", self.text, buttonTitle];
-            self.displayText = self.text;
+            [self setText:[NSString stringWithFormat:@"%@%@", self.text, buttonTitle]];
+            [self setScreenLabelText:[self text]];
             break;
         case 110:
             if (self.isEqual) {
@@ -126,8 +132,8 @@
             if (!self.text.length || [self.text containsString:@"."]) {
                 return;
             }
-            self.text = [NSString stringWithFormat:@"%@%@", self.text, buttonTitle];
-            self.displayText = self.text;
+            [self setText:[NSString stringWithFormat:@"%@%@", self.text, buttonTitle]];
+            [self setScreenLabelText:[self text]];
             break;
         // (+, -, *, /)
         case 111:
@@ -139,12 +145,12 @@
                     if (self.text.length) {
                         [self setOperateType:operateType];
                         [self setPrevText:[self calculateWithPrevText:self.prevText andText:self.text]];
-                        [self setDisplayText:self.prevText];
+                        [self setScreenLabelText:[self prevText]];
                         [self setText:@""];
                     }
                 } else if (self.text.length) {
                     [self setOperateType:operateType];
-                    [self setPrevText:self.text];
+                    [self setPrevText:[self text]];
                     [self setText:@""];
                 }
             }
@@ -152,26 +158,26 @@
         // =
         case 115:
             if (self.operateType && self.text.length) {
-                [self setDisplayText:[self calculateWithPrevText:self.prevText andText:self.text]];
+                [self setScreenLabelText:[self calculateWithPrevText:[self prevText] andText:[self text]]];
                 [self setIsEqual:YES];
                 [self setOperateType:OperateTypeNone];
             }
             break;
         // %
         case 116:
-            [self setDisplayText:[self percentWithText:self.text]];
+            [self setScreenLabelText:[self percentWithText:[self text]]];
             [self setIsEqual:YES];
             break;
         // +/-
         case 117:
-            [self setDisplayText:[self negateWithText:self.text]];
+            [self setScreenLabelText:[self negateWithText:[self text]]];
             break;
         // AC
         case 118:
             [self allClean];
             break;
     }
-    [[self screenView] updateLabelTextWithScreenLabelText:[self displayText]];
+    [[self screenView] updateLabelTextWithScreenLabelText:[self screenLabelText]];
 }
 
 @end
